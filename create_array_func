@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void create_array(int **array1, int count){
+    *array1 = (int*)malloc(sizeof(int)*count);
+    for(int i = 0; i < count; i++){
+        *(*array1 + i) = rand() %100;
+        printf("Dizinin %d. elemanı %d\n", i , **array1 + i);
+        printf("Dizinin %d. elemanının adresi %d\n", i  ,*array1 + i);
+    }
+}
+
+int main() {
+    // Write C code here
+    printf("Hello world");
+    int *array1;
+    int count = 8;
+    
+    create_array(&array1, count);
+    
+    return 0;
+}
