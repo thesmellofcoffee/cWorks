@@ -32,6 +32,20 @@ void addToHead(int num, struct node **list_head){
     
 }
 
+void addToLast(int num, struct node **list){
+    struct node *v = createNode(num);
+    if(*list == NULL){
+        v->next = *list;
+        *list = v;
+    }else{
+        struct node *temp = *list;
+        while(temp->next !=NULL){
+            temp = temp->next;
+        }
+        temp->next = v;
+    }
+}
+
 int main() {
    
    struct node *list = NULL;
@@ -39,6 +53,7 @@ int main() {
    addToHead(6, &list);
    addToHead(25, &list);
    addToHead(865, &list);
+   addToLast(2,&list);
 
    liste_yaz(list);
 
